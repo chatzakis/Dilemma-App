@@ -26,6 +26,9 @@ function displayQuestion() {
   document.getElementById('questionText').innerText = (currentQuestionIndex+1) + ". " + currentQuestion.question;
   document.getElementById('answer1').innerText = currentQuestion.answers[0].answer;
   document.getElementById('answer2').innerText = currentQuestion.answers[1].answer;
+
+  document.getElementById('answer1').style.display = "block";
+  document.getElementById('answer2').style.display = "block";
   
   // Set up answer button events
   document.getElementById('answer1').onclick = () => submitAnswer(currentQuestion.answers[0].num);
@@ -45,7 +48,8 @@ function submitAnswer(answerNum) {
   .then(response => response.json())
   .then(data => {
     console.log('Answer submitted successfully:', data);
-    const feedbackMessage = parseFloat(getQuestionPercentage(answerNum-1)).toFixed(1) + '% of users answered ' + currentQuestion.answers[answerNum-1].answer;
+    const feedbackMessage = '<b>' + parseFloat(getQuestionPercentage(answerNum-1)).toFixed(1) + 
+      '% </b> of users answered <b>' + currentQuestion.answers[answerNum-1].answer + '</b>';
     displayFeedback(feedbackMessage, 'success');
 
     // Move to the next question
@@ -64,7 +68,11 @@ function displayFeedback(message, type) {
     const feedbackDiv = document.getElementById('feedback-div');
     const feedbackElement = document.getElementById('feedback');
     const nextBtn = document.getElementById('next');
-    feedbackElement.innerText = message;
+
+    document.getElementById('answer1').style.display =  "none";
+    document.getElementById('answer2').style.display =  "none";
+
+    feedbackElement.innerHTML = message;
     feedbackDiv.style.display = "block";
     feedbackElement.className = type;
 
