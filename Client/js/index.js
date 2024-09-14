@@ -45,7 +45,7 @@ function submitAnswer(answerNum) {
   .then(response => response.json())
   .then(data => {
     console.log('Answer submitted successfully:', data);
-    const feedbackMessage = parseFloat(getQuestionPercentage(answerNum-1)).toFixed(1) + '% of users gave the same answer';
+    const feedbackMessage = parseFloat(getQuestionPercentage(answerNum-1)).toFixed(1) + '% of users answered ' + currentQuestion.answers[answerNum-1].answer;
     displayFeedback(feedbackMessage, 'success');
 
     // Move to the next question
