@@ -12,17 +12,15 @@ A simple web application for users to create and answer dilemmas (questions with
 ### Submit your question
 ![dilemma-quiz-3](https://github.com/user-attachments/assets/e385902e-aa63-4582-afe5-87be558924f8)
 
-### Responsive design
-![dilemma-quiz-4](https://github.com/user-attachments/assets/86fb6db3-3cb9-44b6-9083-e49abcd57639)
-
 ## Features
 
 - Submit dilemmas (questions with two answers)
 - Vote for one of the two options in each question
 - Track how many users have selected each answer
 - Backend API built with Express.js
-- MongoDB for storing questions and answers
-- Frontend with simple HTML/CSS-Bootstrap to display and Javascript to interact with the questions
+
+### Responsive design
+![dilemma-quiz-4](https://github.com/user-attachments/assets/86fb6db3-3cb9-44b6-9083-e49abcd57639)
 
 ## Technologies Used
 
@@ -30,6 +28,9 @@ A simple web application for users to create and answer dilemmas (questions with
 - **Database**: MongoDB
 - **Frontend**: HTML, CSS - Bootstrap, Javascript
 - **Other**: Mongoose (ODM for MongoDB), JavaScript (for interaction between frontend and backend)
+
+### Database preview (MongoDB Cloud)
+![dilemma-quiz-5](https://github.com/user-attachments/assets/db355489-bdbe-49d2-a681-7df3715ab693)
 
 ## Getting Started
 
